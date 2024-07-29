@@ -11,7 +11,7 @@
   in {
     packages.${system}.default =
       pkgs.stdenv.mkDerivation {
-        src = ./rust-hello;
+        src = ../rust-hello;
         name = "rust-hello-1.0";
         nativeBuildInputs = [pkgs.cargo];
         buildPhase = ''
