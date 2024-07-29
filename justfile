@@ -29,3 +29,17 @@ path-info path:
 
 shell-app:
   nix build -v -f ./shell-app.nix
+
+# check if the `result` is a referrning to a store path
+clean-check dir:
+  #!/usr/bin/env bash
+
+  link_name="result"
+  source_dir=$(readlink -f "{{dir}}/$link_name")
+
+  nix-store --query --roots $source_dir
+
+## 07
+
+p7:
+  nix build ./07-flakes
