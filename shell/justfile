@@ -1,0 +1,9 @@
+
+_default:
+  @just --list
+
+nix-shell:
+  nix-shell --pure --verbose
+
+nix shell:
+  nix shell --expr 'with import <nixpkgs> {}; callPackage ./shell.nix {}'
